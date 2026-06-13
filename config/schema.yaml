@@ -1,0 +1,54 @@
+column:
+  columns_to_drop:
+    - shift_id
+    - operator_id
+    - operator_name 
+    - machine_id
+    - production_id
+    - supervisor_id
+    - qc_id
+    - resolved_by
+    - inspection_result 
+    - defect_rate
+    - downtime_ratio 
+    - issue_type
+    - defect_type 
+    - severity
+    - start_time
+    - end_time
+    - date
+    - timestamp
+    - hour_of_day
+    - day_of_week
+
+  Categorical_features:
+    - shift_name
+    - skill_category
+    - machine_status
+
+  Numerical_features:
+    - units_produced
+    - cycle_time_avg
+    - experience_level
+    - defect_count
+    - runtime_hours
+    - downtime_minutes 
+    - maintenance_flag
+    - maintenance_downtime
+    - total_operation_hours
+    - temperature
+    - humidity
+    - shift_duration
+    - day_of_week_sin
+    - day_of_week_cos 
+    - hour_of_day_sin 
+    - hour_of_day_cos
+
+  
+  Cyclic_Features:
+    hour_of_day:
+      period: 24
+      source: timestamp
+    day_of_week:
+      period: 7
+      source: timestamp
