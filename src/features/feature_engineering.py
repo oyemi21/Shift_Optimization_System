@@ -35,6 +35,10 @@ class FeatureEngineer:
             # Shift duration
             self.data['shift_duration'] = (self.data['end_time'] - self.data['start_time']).dt.total_seconds() / 3600
 
+            # Total Operation hours
+            self.data['total_operation_hours'] = (
+            self.data['runtime_hours'] + self.data['downtime_minutes'] / 60)
+
             # Defect rate
             self.data['defect_rate'] = self.data['defect_count'] / self.data['units_produced'].replace(0, pd.NA)
 
@@ -94,12 +98,3 @@ def start_feature_engineering(data: pd.DataFrame):
         return X_train, X_test, y_train, y_test
     except Exception as e:
         raise MyException(e, sys)
-
-raw_data = load_data()
-validated_data = starting_datavalidation(raw_data)
-processed_data = start_data_preprocessing(validated_data)
-    
-X_train, X_test, y_train, y_test = start_feature_engineering(processed_data)
-print(X_train.head())
-print(X_train.shape)
-print(y_train.head())

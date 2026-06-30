@@ -7,3 +7,6 @@ mlflow
 FastAPI
 uvicorn
 dagshub
+optuna
+pydantic
+streamlit

@@ -10,6 +10,8 @@ LOG_DIR = "logs"
 LOG_FILE = "app.log"
 MAX_LOG_SIZE = 5 * 1024 * 1024  # 5 MB
 BACKUP_COUNT = 3
+EXPERIMENT_NAME = "Nordex_Shift_Optimization_Production_Experiment"
+registered_model_name = "shift_optimization_production_model"
 
 log_folder_path = os.path.join(os.getcwd(), LOG_DIR)
 os.makedirs(log_folder_path, exist_ok=True)
